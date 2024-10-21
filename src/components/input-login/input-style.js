@@ -7,7 +7,8 @@ export const StyledInputLogin = styled.div`
     gap: 60px;
     padding: 100px;
 
-    width: 60%;
+    width: 52%;
+    height: 100vh;
 
     h2 {
         font-family: 'Inter', sans-serif;
@@ -21,7 +22,7 @@ export const StyledInputLogin = styled.div`
         border: 1px solid #A7A7A7;
         color: #c50000;
         font-size: 20px;
-        padding: 30px 25px;
+        padding: 25px 20px;
         border-radius: 5px;
         background-color: transparent;
     }
@@ -38,6 +39,8 @@ export const StyledInputLogin = styled.div`
         font-size: 20px;
 
         color: #FFFFFF;
+
+        text-decoration: none;
     }
 
     button {
@@ -48,6 +51,13 @@ export const StyledInputLogin = styled.div`
         background-color: #C50000;
         color: #fff;
         font-size: 24px;
-        padding: 30px 250px;
+        padding: 25px;
+        transition: ease-in-out 0.15s;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background-color: #e50000;
+        transform: scale(1.01);
     }
 `
