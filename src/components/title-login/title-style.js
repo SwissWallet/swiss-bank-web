@@ -8,11 +8,16 @@ export const StyledTitleLogin = styled.div`
     h1{
         font-family: 'Inter', sans-serif;
         font-weight: 100;
-        font-size: 32px;
+        font-size: 48px;
         letter-spacing: 0.34em;
 
         color: #FFFFFF;
         margin: 100px;
+    }
+
+    
+    img{
+        width: 70%;
     }
 
 `
