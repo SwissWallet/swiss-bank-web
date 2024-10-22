@@ -55,7 +55,7 @@ export const StyledInputLogin = styled.div`
         transition: ease-in-out 0.15s;
         cursor: pointer;
     }
-
+    
     button:hover{
         background-color: #e50000;
         transform: scale(1.01);
