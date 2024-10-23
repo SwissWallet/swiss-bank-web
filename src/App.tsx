@@ -1,15 +1,13 @@
 import './App.css'
 import Login from './pages/login'
-import PixPage from './pages/pix'
+// import PixPage from './pages/pix'
 
-function App() {
+export function App() {
 
   return (
     <>
-      {/* <Login /> */}
-      <PixPage />
+      <Login />
+      {/* <PixPage /> */}
     </>
   )
 }
-
-export default App
