@@ -13,7 +13,10 @@ export default function InputLogin() {
             username,
             password
         })
-        .then((json) => {console.log(json.data)})
+        .then((json) => {
+            const token = json.data.token;
+            localStorage.setItem("token", token)
+        })
         .catch((err) => console.log(err));
 
     };
