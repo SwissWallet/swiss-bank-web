@@ -1,22 +1,35 @@
+import { useState } from "react";
 import { api } from "../../lib/axios.js";
 import { StyledInputLogin } from "./input-style.js";
 
 export default function InputLogin() {
 
-    async function authUser(){
-        await api.post(`/v1/auth`)
-        .then((json) => console.log(json.data))
+    const [ username, setUsername ] = useState<string>("");
+    const [ password, setPassword ] = useState<string>("");
+
+    async function login(){
+        console.log(username, password)
+        await api.post(`/v1/auth`, {
+            username,
+            password
+        })
+        .then((json) => {console.log(json.data)})
         .catch((err) => console.log(err));
 
+    };
+
+    function onAuthUser(){
+        if(!username || !password) return
+        login();
     };
 
     return (
         <StyledInputLogin>
             <h2>Bem-vindo!</h2>
-            <input type="text" placeholder="Usuário" />
-            <input type="password" placeholder="••••" />
+            <input type="text" placeholder="Usuário" onChange={(e) => setUsername(e.target.value)} />
+            <input type="password" placeholder="••••" onChange={(e) => setPassword(e.target.value)}/>
             <a href="#">Esqueci minha senha</a>
-            <button onClick={authUser}>Login</button>
+            <button onClick={onAuthUser}>Login</button>
         </StyledInputLogin>
     );
 }
