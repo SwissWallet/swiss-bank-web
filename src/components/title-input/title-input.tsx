@@ -15,4 +15,4 @@ export default function TitleInput(){
             </article>
         </StyledTitleInput>
     )
-}
+} 
