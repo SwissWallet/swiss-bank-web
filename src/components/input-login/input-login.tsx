@@ -15,7 +15,11 @@ export default function InputLogin() {
 
     async function auth(token: string){
         
-        await api.get(`/v1/users/current`)
+        await api.get(`/v1/users/current`, {
+            headers: {
+                'Authorization': `Bearer ${token}`   
+            }
+        })
         .then((json) => {
             api.defaults.headers['Authorization'] = `Bearer ${token}`;
             dispatch(setLogin(json.data));
