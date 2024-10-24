@@ -1,21 +1,39 @@
 import { useState } from "react";
 import { api } from "../../lib/axios.js";
 import { StyledInputLogin } from "./input-style.js";
+import { useDispatch } from "react-redux";
+import { setLogin } from "../../features/user-slice.js";
+import { useNavigate } from "react-router-dom";
 
 export default function InputLogin() {
 
     const [ username, setUsername ] = useState<string>("");
     const [ password, setPassword ] = useState<string>("");
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    async function auth(token: string){
+        
+        await api.get(`/v1/users/current`)
+        .then((json) => {
+            api.defaults.headers['Authorization'] = `Bearer ${token}`;
+            dispatch(setLogin(json.data));
+            navigate(`/home`);
+        })
+        .catch((err) => console.log(err))
+    };
+
     async function login(){
-        console.log(username, password)
         await api.post(`/v1/auth`, {
             username,
             password
         })
         .then((json) => {
             const token = json.data.token;
-            localStorage.setItem("token", token)
+            localStorage.setItem("token", token);
+
+            auth(token);
         })
         .catch((err) => console.log(err));
 
