@@ -19,7 +19,7 @@ export default function InputLogin() {
         .then((json) => {
             api.defaults.headers['Authorization'] = `Bearer ${token}`;
             dispatch(setLogin(json.data));
-            navigate(`/home`);
+            navigate(`/pix`);
         })
         .catch((err) => console.log(err))
     };
