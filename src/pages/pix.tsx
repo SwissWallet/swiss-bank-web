@@ -2,7 +2,7 @@ import Pay from "../components/payment-section/payment-section.tsx"; // Verifiqu
 import Sidebar from "../components/sidebar/sidebar";
 import TitleInput from "../components/title-input/title-input";
 
-export default function PixPage() {
+export function PixPage() {
     return (
         <div style={{ backgroundColor: "#1B1B1B", display: "flex", height: "100vh" }}>
             <Sidebar />

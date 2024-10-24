@@ -1,17 +1,12 @@
+import { RouterProvider } from 'react-router-dom'
 import './App.css'
-import Home from './pages/home'
-import Login from './pages/login'
-import PixPage from './pages/pix'
+import { router } from './routes/routes'
 
-function App() {
+export function App() {
 
   return (
     <>
-      {/* <Login /> */}
-      {/* <PixPage /> */}
-      <Home />
+      <RouterProvider router={router} />
     </>
   )
 }
-
-export default App
