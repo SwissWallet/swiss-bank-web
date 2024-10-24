@@ -33,7 +33,7 @@ export const PayStyled = styled.div`
         color: #fff;
         font-size: 24px;
         padding: 25px;
-        width: 600px;
+        width: 500px;
         transition: ease-in-out 0.15s;
         cursor: pointer;
     }
