@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-interface initialStateRoutes {
-    value: boolean
-}
-
-const initialState: initialStateRoutes = {
-    value: false
+const initialState = {
+    value: {}
 }
 
 const cardSlice = createSlice({
