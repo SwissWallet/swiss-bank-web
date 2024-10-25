@@ -42,5 +42,9 @@ export const StyleBalance = styled.div`
         background-color: #2C2C2C;
         padding: 10px;
         border-radius: 5px;
+
+        :hover {
+            cursor: pointer;
+        }
     }
 `

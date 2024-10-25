@@ -16,9 +16,9 @@ export default function AccoutBalance(){
             </div>
             <section>
                 <p>PIX</p>
-                <div className="button-img">
+                <button className="button-img">
                     <img src={HandMoney} alt="" />
-                </div>
+                </button>
             </section>
         </StyleBalance>
     )
