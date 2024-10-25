@@ -33,7 +33,7 @@ export default function Home(){
     useEffect(() => {
         getCardData();
         getAccountData();
-    }, [])
+    }, []);
 
     return(
         <div style={{display:"flex", backgroundColor:"#1B1B1B"}}>
