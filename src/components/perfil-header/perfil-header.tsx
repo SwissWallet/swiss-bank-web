@@ -9,7 +9,8 @@ export default function PerfilHeader(){
             <div>
                 <img src={Bruna} alt="" />
                 <div>
-                    <p>Bem-vindo de volta,<br/>Bruna Silva!</p>
+                    <p>Bem-vindo de volta,</p>
+                    <p>Bruna Silva!</p>
                 </div>
             </div>
             <article>
