@@ -42,5 +42,13 @@ export const StyleBalance = styled.div`
         background-color: #2C2C2C;
         padding: 10px;
         border-radius: 5px;
+        transition: 0.1s ease-in-out;
+        cursor: pointer;
+    }
+
+    .button-img:hover{
+        transform: scale(1.05);
+        /* box-shadow: 0px 10px 12px rgba(197, 0, 0, 0.5); */
+        /* background-color: #A7A7A7; */
     }
 `
