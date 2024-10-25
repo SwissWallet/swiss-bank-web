@@ -3,6 +3,7 @@ import HandMoney from "../../assets/hand-money.png"
 
 import {StyleBalance} from "./style-balance.js"
 import { RootState } from "../../store.js";
+import { Link } from "react-router-dom";
 
 export default function AccoutBalance(){
 
@@ -16,9 +17,9 @@ export default function AccoutBalance(){
             </div>
             <section>
                 <p>PIX</p>
-                <button className="button-img">
+                <Link to={`/pix`} className="button-img">
                     <img src={HandMoney} alt="" />
-                </button>
+                </Link>
             </section>
         </StyleBalance>
     )
