@@ -66,6 +66,16 @@ export const StyledTitleInput = styled.section`
         padding-bottom: 5px;
         border-bottom: 1px solid #a7a7a7;
     }
+
+    button{
+        color: #c50000;
+        border: none;
+        background-color: transparent;
+
+        :hover{
+            cursor: pointer;
+        }
+    }
 `
 
 
