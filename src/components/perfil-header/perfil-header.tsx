@@ -7,9 +7,8 @@ import { RootState } from "../../store.js"
 
 export default function PerfilHeader(){
 
-    const name = useSelector((state: RootState) => state.account.value.user.name);
-
-
+    const name = useSelector((state: RootState) => state.user.value?.name);
+    
     return(
         <StyleHeader>
             <div>

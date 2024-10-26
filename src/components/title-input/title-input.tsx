@@ -1,4 +1,4 @@
-import {StyledTitleInput} from "../title-input/title-input-style.js"
+import { StyledTitleInput } from "../title-input/title-input-style.js"
 import { useSelector } from "react-redux"
 import { RootState } from "../../store.js"
 import { useState } from "react"
