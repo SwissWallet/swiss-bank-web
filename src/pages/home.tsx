@@ -7,7 +7,7 @@ import { api } from "../lib/axios";
 import { UserContext } from "../context/user";
 
 export default function Home(){
-    const { setDataCard } = useContext(UserContext);
+    const { setDataCard, setDataAccount } = useContext(UserContext);
     
     async function getCardData(){
         await api.get(`/v1/cards/current`)
@@ -18,8 +18,17 @@ export default function Home(){
         .catch((err) => console.log(err));
     };
 
+    async function getAccountData(){
+        await api.get(`/v1/accounts/current`)
+        .then((json) => {
+            const data = json.data;
+            setDataAccount(data);
+        })
+    };
+
     useEffect(() => {
         getCardData();
+        getAccountData();
     }, [])
 
     return(
