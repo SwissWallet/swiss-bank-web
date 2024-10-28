@@ -1,7 +1,15 @@
-import {StyledTitleInput} from "../title-input/title-input-style.js"
-import Eye from "../../assets/olho.png"
+import { StyledTitleInput } from "../title-input/title-input-style.js"
+import { useSelector } from "react-redux"
+import { RootState } from "../../store.js"
+import { useState } from "react"
+import { Eye, EyeClosed } from "lucide-react"
 
 export default function TitleInput(){
+
+    const [ isShowBalance, setIsShowBalance ] = useState<boolean>(true);
+
+    const balance = useSelector((state: RootState) => state.account.value.balance);
+
     return(
         <StyledTitleInput>
             <div>
@@ -10,8 +18,16 @@ export default function TitleInput(){
             </div>
             <article>
                 <h4>Saldo em conta</h4>
-                <p>$ 3456,00</p>
-                <img src={Eye} alt="eye icon" />
+                <p>$ {balance}</p>
+                {isShowBalance ? (
+                    <button onClick={() => setIsShowBalance(false)}>
+                        <Eye />
+                    </button>
+                ) : (
+                    <button>
+                        <EyeClosed onClick={() => setIsShowBalance(true)} />
+                    </button>
+                )}
             </article>
         </StyledTitleInput>
     )
