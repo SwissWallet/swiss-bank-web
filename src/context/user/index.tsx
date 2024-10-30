@@ -40,20 +40,14 @@ const UserProvider = ({ children }: {children: React.ReactNode}) => {
 
     const logIn = (user: UserProps) => {
         setUser(user);
-
-        console.log(user);
     };
 
     const setDataCard = (card: CardProps) => {
         setCard(card);
-
-        console.log(card);
     };
 
     const setDataAccount = (account: AccountProps) => {
         setAccount(account);
-
-        console.log(account)
     };
 
     const logOut = () => {
