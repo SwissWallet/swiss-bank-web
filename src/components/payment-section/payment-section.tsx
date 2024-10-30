@@ -1,10 +1,16 @@
 import {PayStyled} from "./style-payment.js";
 
-export default function Pay() {
+interface PayProps{
+    paymentPix: () => void;
+}
+
+export default function Pay({
+    paymentPix
+}: PayProps) {
     return (
         <PayStyled>
             <h1>R$<span>00</span>,00</h1>
-            <button>Pagar</button>
+            <button onClick={paymentPix}>Pagar</button>
         </PayStyled>
     );
 }
