@@ -7,13 +7,13 @@ import { UserContext } from "../../context/user/index.js";
 
 export default function AccoutBalance(){
 
-    const { card } = useContext(UserContext);
+    const { account } = useContext(UserContext);
 
     return(
         <StyleBalance>
             <div>
                 <p>Valor total em conta</p>
-                <h1>R$<span>{card?.cardLimit}</span>,00</h1>
+                <h1>R$<span>{account?.balance}</span>,00</h1>
             </div>
             <section>
                 <p>PIX</p>

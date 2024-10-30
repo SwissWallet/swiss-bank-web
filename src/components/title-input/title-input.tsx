@@ -1,10 +1,13 @@
 import { StyledTitleInput } from "../title-input/title-input-style.js"
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { Eye, EyeClosed } from "lucide-react"
+import { UserContext } from "../../context/user/index.js";
 
 export default function TitleInput(){
 
     const [ isShowBalance, setIsShowBalance ] = useState<boolean>(true);
+
+    const { account } = useContext(UserContext);
 
     return(
         <StyledTitleInput>
@@ -14,7 +17,7 @@ export default function TitleInput(){
             </div>
             <article>
                 <h4>Saldo em conta</h4>
-                <p>$ {"30"}</p>
+                <p>$ {account?.balance}</p>
                 {isShowBalance ? (
                     <button onClick={() => setIsShowBalance(false)}>
                         <Eye />
