@@ -23,7 +23,7 @@ export default function ExtractArea({
 
             {extract.length > 0 ? (
                 extract.map((item: Extract) => (
-                    <div className="row">
+                    <div className="row" key={item.id}>
                         <div className="button-img">
                             <img src={Dollar} alt="" />
                         </div>

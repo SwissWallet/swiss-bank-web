@@ -6,6 +6,8 @@ export const StyleExtract = styled.div`
     border: 1px solid #a7a7a7;
     padding: 20px;
     border-radius: 5px;
+    max-height: 510px;
+    overflow-y: scroll;
 
     h1{
         font-family: 'Inter', sans-serif;
