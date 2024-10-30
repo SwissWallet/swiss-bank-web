@@ -6,7 +6,7 @@ import Sidebar from "../components/sidebar/sidebar";
 import { api } from "../lib/axios";
 import { UserContext } from "../context/user";
 
-interface Extract {
+export interface Extract {
     id: string,
     description: string,
     value: string,
@@ -68,7 +68,9 @@ export default function Home(){
             <div style={{width: "100%", padding:"30px 60px", display:"flex", flexDirection: "column", gap:"30px", height:"100vh"}}>
                 <PerfilHeader />
                 <AccoutBalance />
-                <ExtractArea />
+                <ExtractArea 
+                    extract={extract}
+                />
             </div>
         </div>
 
