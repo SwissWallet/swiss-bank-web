@@ -17,7 +17,7 @@ export interface Extract {
 export default function Home(){
     const [ extract, setExtract ] = useState<Extract[]>([]);
 
-    const { setDataCard, setDataAccount } = useContext(UserContext);
+    const { setDataCard, setDataAccount, logIn } = useContext(UserContext);
     
     async function getCardData(){
         await api.get(`/v1/cards/current`)
@@ -57,10 +57,22 @@ export default function Home(){
         .catch((err) => console.log(err))
     };
 
+    async function isValidToken(){
+        await api.get(`/v1/users/current`)
+        .then((json) => {
+            const data = json.data;
+            if(data){
+                logIn(data)
+            }
+        })
+        .catch((err) => console.log("error \n", err))
+    };
+
     useEffect(() => {
         const token = localStorage.getItem("token");
     if (token) {
         api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+        isValidToken();
         getCardData();
         getAccountData();
         getExtract();
