@@ -22,7 +22,7 @@ export default function ExtractArea({
             {/* linha */}
 
             {extract.length > 0 ? (
-                extract.map((item: Extract) => (
+                extract.reverse().map((item: Extract) => (
                     <div className="row" key={item.id}>
                         <div className="button-img">
                             <img src={Dollar} alt="" />
