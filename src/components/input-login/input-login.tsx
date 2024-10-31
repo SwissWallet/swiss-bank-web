@@ -23,7 +23,6 @@ export default function InputLogin() {
         .then((json) => {
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
             const data = json.data;
-            if(data){}
             logIn(data);
             navigate(`/home`);
         })

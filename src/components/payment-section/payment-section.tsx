@@ -11,7 +11,7 @@ export default function Pay({
 }: PayProps) {
     return (
         <PayStyled>
-            <h1>R$<span>{valuePix}</span>,00</h1>
+            <h1>R$<span>{valuePix === "" ? ("00") : (valuePix)}</span>,00</h1>
             <button onClick={paymentPix}>Pagar</button>
         </PayStyled>
     );
