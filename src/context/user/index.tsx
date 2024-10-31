@@ -21,7 +21,7 @@ export interface AccountProps{
     balance: string;
 };
 
-type UserContextPros = {
+type UserContextProps = {
     user: UserProps | null;
     card: CardProps | null;
     account: AccountProps | null;
@@ -31,7 +31,7 @@ type UserContextPros = {
     logOut: () => void;
 };
 
-const UserContext = createContext<UserContextPros>({} as UserContextPros);
+const UserContext = createContext<UserContextProps>({} as UserContextProps);
 
 const UserProvider = ({ children }: {children: React.ReactNode}) => {
     const [ user, setUser ] = useState<UserProps | null>(null);
@@ -51,7 +51,7 @@ const UserProvider = ({ children }: {children: React.ReactNode}) => {
     };
 
     const logOut = () => {
-        console.log("logout");
+        setUser(null);
     };
 
     return(
