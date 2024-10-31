@@ -23,7 +23,9 @@ export default function Home(){
         await api.get(`/v1/cards/current`)
         .then((json) => {
             const data = json.data;
-            setDataCard(data);
+            if(data){
+                setDataCard(data);
+            }
         })
         .catch((err) => console.log(err));
     };
@@ -32,7 +34,9 @@ export default function Home(){
         await api.get(`/v1/accounts/current`)
         .then((json) => {
             const data = json.data;
-            setDataAccount(data);
+            if(data){
+                setDataAccount(data);
+            }
         })
     };
 
@@ -54,9 +58,15 @@ export default function Home(){
     };
 
     useEffect(() => {
+        const token = localStorage.getItem("token");
+    if (token) {
+        api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
         getCardData();
         getAccountData();
         getExtract();
+    } else {
+        console.log("Token não encontrado.");
+    }
     }, [])
 
     return(
