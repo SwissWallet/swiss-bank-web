@@ -40,7 +40,6 @@ export default function Home(){
         await api.get(`/v1/extracts/current`)
         .then((json) => {
             const data = json.data;
-            console.log("data: ", data)
             if(data){
                 setExtract(data.map((item: Extract) => ({
                     id: item.id,
@@ -59,8 +58,6 @@ export default function Home(){
         getAccountData();
         getExtract();
     }, [])
-
-    console.log("extract: ", extract)
 
     return(
         <div style={{display:"flex", backgroundColor:"#1B1B1B"}}>
