@@ -1,8 +1,9 @@
 import { useContext, useState } from "react";
 import { api } from "../../lib/axios.js";
-import { StyledInputLogin } from "./input-style.js";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user/index.tsx";
+import Button from "../button/index.tsx";
+import Input from "../input/index.tsx";
 
 export default function InputLogin() {
     const { logIn } = useContext(UserContext);
@@ -50,12 +51,12 @@ export default function InputLogin() {
     };
 
     return (
-        <StyledInputLogin>
-            <h2>Bem-vindo!</h2>
-            <input type="text" placeholder="Usuário" onChange={(e) => setUsername(e.target.value)} />
-            <input type="password" placeholder="••••" onChange={(e) => setPassword(e.target.value)}/>
-            <a href="#">Esqueci minha senha</a>
-            <button onClick={onAuthUser}>Login</button>
-        </StyledInputLogin>
+        <div className="flex flex-col gap-16 p-24 w-[52%] h-screen">
+            <h2 className="font-sans font-medium text-4xl text-white">Bem-vindo!</h2>
+            <Input typeProps="text" onChangeProps={setUsername} placeholderProps="Username"></Input>
+            <Input placeholderProps="••••" onChangeProps={setPassword} typeProps="password"/>
+            <a className="text-end font-sans font-medium text-xl text-white" href="#">Esqueci minha senha</a>
+            <Button onClick={() => onAuthUser()}>Login</Button >
+        </div>
     );
 }

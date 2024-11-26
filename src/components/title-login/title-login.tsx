@@ -1,12 +1,11 @@
 import AbstractIcon from "../../assets/abstract-icon.png"
-import { StyledTitleLogin } from "./title-style.js";
 
 
 export default function TitleLogin(){
     return(
-        <StyledTitleLogin>
-            <h1>SWISS <br /> BANK</h1>
-            <img src={AbstractIcon} alt="" />
-        </StyledTitleLogin>
+        <div className="flex flex-col justify-between">
+            <h1 className="font-sans text-5xl text-white p-10 ">SWISS <br /> BANK</h1>
+            <img src={AbstractIcon} alt="" className="w-[70%]"/>
+        </div>
     )
 }

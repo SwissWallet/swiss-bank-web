@@ -6,7 +6,7 @@ import TitleLogin from "../components/title-login/title-login";
 export function Login(){
     
     return(
-        <div style={{display: "flex", justifyContent: "space-between", backgroundColor:"#1B1B1B"}}>
+        <div className="flex justify-between bg-[#1b1b1b]">
             {/* <Sidebar /> */}
             <TitleLogin />
             <InputLogin />

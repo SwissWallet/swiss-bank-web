@@ -84,7 +84,7 @@ export default function Home(){
     return(
         <div style={{display:"flex", backgroundColor:"#1B1B1B"}}>
             <Sidebar />
-            <div style={{width: "100%", padding:"30px 60px", display:"flex", flexDirection: "column", gap:"30px", height:"100vh"}}>
+            <div className="w-full px-8 py-16 flex flex-col gap-8 h-screen" >
                 <PerfilHeader />
                 <AccoutBalance />
                 <ExtractArea 
