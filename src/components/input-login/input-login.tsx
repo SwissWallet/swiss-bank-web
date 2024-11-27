@@ -55,7 +55,6 @@ export default function InputLogin() {
             <h2 className="font-sans font-medium text-4xl text-white">Bem-vindo!</h2>
             <Input typeProps="text" onChangeProps={setUsername} placeholderProps="Username"></Input>
             <Input placeholderProps="••••" onChangeProps={setPassword} typeProps="password"/>
-            <a className="text-end font-sans font-medium text-xl text-white" href="#">Esqueci minha senha</a>
             <Button onClick={() => onAuthUser()}>Login</Button >
         </div>
     );
