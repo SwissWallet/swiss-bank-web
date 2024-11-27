@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledSidebar = styled.aside`
-    display: flex;
+    
+/*display: flex;
     flex-direction: column;
 
     background-color: #212121;
@@ -63,5 +64,5 @@ export const StyledSidebar = styled.aside`
     img {
         width: 28px;
         height: auto;
-    }
+    }*/
 `
