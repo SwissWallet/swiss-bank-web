@@ -1,8 +1,6 @@
 import { useContext } from "react";
 import Dollar from "../../assets/dollar.png"
 import { Extract } from "../../pages/home.js"
-
-import {StyleExtract} from "./style-extract-area.js"
 import { UserContext } from "../../context/user/index.js";
 
 interface ExtractAreaProps {
@@ -16,26 +14,26 @@ export default function ExtractArea({
     const { card } = useContext(UserContext);
 
     return(
-        <StyleExtract>
-            <h1>Movimentações</h1>
+        <div className="flex flex-col border-2 border-[#A7A7A7] rounded-md max-h-[510px] overflow-y-scroll p-5">
+            <h1 className="font-sans font-thin text-2xl text-white">Movimentações</h1>
 
             {/* linha */}
 
             {extract.length > 0 ? (
                 extract.reverse().map((item: Extract) => (
-                    <div className="row" key={item.id}>
-                        <div className="button-img">
+                    <div className="flex gap-4 items-center pt-5" key={item.id}>
+                        <div className="flex flex-col gap-4 items-center bg-[#2C2C2C] P-3 rounded-md">
                             <img src={Dollar} alt="" />
                         </div>
-                        <article>
-                            <div className="text">
-                                <h4>{card?.cardNumber}</h4>
-                                <p>BRL conta</p>
+                        <article className="flex justify-between items-center border-b-2 border-[#A7A7A7] w-full h-full">
+                            <div>
+                                <h4 className="font-sans font-normal text-xl text-white">{card?.cardNumber}</h4>
+                                <p className="font-sans font-normal text-xl text-[#A7A7A7]">BRL conta</p>
                             </div>
                             {item.type === "TRANSACTION" ? (
-                                <h4 className="type-transaction">- {item.value}</h4>
+                                <h4 className="font-sans font-normal text-xl text-red-600">- {item.value}</h4>
                             ) : (
-                                <h4 className="type-deposit">{item.value}</h4>
+                                <h4 className="font-sans font-normal text-xl text-white">{item.value}</h4>
                             )}
                         </article>
                     </div>
@@ -43,6 +41,6 @@ export default function ExtractArea({
             ) : ( 
                 <h1>Realize movimentações</h1>
             )}
-        </StyleExtract>
+        </div>
     )
 }   
