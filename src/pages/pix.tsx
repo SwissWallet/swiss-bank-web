@@ -24,9 +24,9 @@ export function PixPage() {
     };
 
     return (
-        <div style={{ backgroundColor: "#1B1B1B", display: "flex", height: "100vh" }}>
+        <div className="bg-[#1b1b1b] flex h-screen">
             <Sidebar />
-            <div style={{width:"100%"}}>
+            <div className="w-full">
                 <TitleInput
                     getPixCode={getPixCode}
                     setPixCode={setPixCode}
