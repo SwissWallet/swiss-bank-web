@@ -20,9 +20,9 @@ export const StyledSidebar = styled.aside`
         font-weight: 300;
         font-size: 24px;
         /* letter-spacing: -0.06em; */
-
+/* 
         color: #A7A7A7;
-    }
+    } */
 
     p{
         font-family: 'Inter', sans-serif;
