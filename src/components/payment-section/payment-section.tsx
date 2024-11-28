@@ -1,5 +1,3 @@
-import {PayStyled} from "./style-payment.js";
-
 interface PayProps{
     valuePix: string;
     paymentPix: () => void;
