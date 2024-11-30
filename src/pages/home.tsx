@@ -16,6 +16,7 @@ export interface Extract {
 
 export default function Home(){
     const [ extract, setExtract ] = useState<Extract[]>([]);
+    const [ isOpenSidebar, setIsOpenSidebar ] = useState<boolean>(false);
 
     const { setDataCard, setDataAccount, logIn } = useContext(UserContext);
     
@@ -83,9 +84,19 @@ export default function Home(){
 
     return(
         <div style={{display:"flex", backgroundColor:"#1B1B1B"}}>
-            <Sidebar />
+            <div className="w-[300px] h-screen md:block hidden">
+                <Sidebar setIsOpenSidebar={setIsOpenSidebar}/>
+            </div>
+            {isOpenSidebar && (
+                <div className="w-[300px] h-screen block md:hidden fixed z-50">
+                    <Sidebar setIsOpenSidebar={setIsOpenSidebar} />
+                </div>
+            )}
+            
             <div className="w-full px-8 py-16 flex flex-col gap-8 h-screen" >
-                <PerfilHeader />
+                <PerfilHeader
+                    setIsOpenSidebar={setIsOpenSidebar}
+                />
                 <AccoutBalance />
                 <ExtractArea 
                     extract={extract}

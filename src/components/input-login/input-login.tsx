@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { api } from "../../lib/axios.js";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../context/user/index.tsx";
+import AbstractIcon from "../../assets/abstract-icon.png"
 import Button from "../button/index.tsx";
 import Input from "../input/index.tsx";
 
@@ -51,7 +52,7 @@ export default function InputLogin() {
     };
 
     return (
-        <div className="flex flex-col gap-16 p-24 w-[52%] h-screen">
+        <div className="flex flex-col flex-wrap gap-3 justify-center md:gap-16 p-16 md:p-24 md:w-[52%]">
             <h2 className="font-sans font-medium text-4xl text-white">Bem-vindo!</h2>
             <Input typeProps="text" onChangeProps={setUsername} placeholderProps="Username"></Input>
             <Input placeholderProps="••••" onChangeProps={setPassword} typeProps="password"/>
