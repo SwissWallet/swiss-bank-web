@@ -8,6 +8,7 @@ export function PixPage() {
 
     const [ codePix, setPixCode ] = useState("");
     const [ valuePix, setValuePix ] = useState("");
+    const [ isOpenSidebar, setIsOpenSidebar ] = useState<boolean>(false);
 
     async function paymentPix(){
         await api.post(`/v1/codes/payment?code=${codePix}`)
@@ -25,9 +26,17 @@ export function PixPage() {
 
     return (
         <div className="bg-[#1b1b1b] flex h-screen">
-            <Sidebar />
+            <div className="w-[300px] h-screen md:block hidden">
+                <Sidebar setIsOpenSidebar={setIsOpenSidebar}/>
+            </div>
+            {isOpenSidebar && (
+                <div className="w-[300px] h-screen block md:hidden fixed z-50">
+                    <Sidebar setIsOpenSidebar={setIsOpenSidebar} />
+                </div>
+            )}
             <div className="w-full">
                 <TitleInput
+                    setIsOpenSidebar={setIsOpenSidebar}
                     getPixCode={getPixCode}
                     setPixCode={setPixCode}
                 />

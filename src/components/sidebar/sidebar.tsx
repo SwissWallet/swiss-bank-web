@@ -3,9 +3,15 @@ import { useContext } from "react"
 import { UserContext } from "../../context/user/index.js"
 import { useNavigate } from "react-router"
 import { Link } from "react-router-dom"
-import { ArrowRightLeft, LogOut } from "lucide-react"
+import { ArrowRightLeft, LogOut, X } from "lucide-react"
 
-export default function Sidebar() {
+interface SidebarProps {
+    setIsOpenSidebar: (e: boolean) => void; 
+}
+
+export default function Sidebar({
+    setIsOpenSidebar,
+}: SidebarProps) {
 
     const { logOut } = useContext(UserContext);
     const navigate = useNavigate();
@@ -17,7 +23,12 @@ export default function Sidebar() {
     };
 
     return(
-        <div className="flex flex-col p-[30px] w-[300px] bg-[#212121]">
+        <div className="flex-col p-[30px] w-full h-full bg-[#212121]">
+            <button
+                onClick={() => setIsOpenSidebar(false)}
+                className="block md:hidden text-white hover:text-red-600 transition-all hover:scale-110">
+                <X />
+            </button>
             <h4 className="font-medium text-2xl border-b-[1px] border-b-[#a7a7a7] text-[#c1c1c1] text-center">Barra de Ações</h4>
             <nav className="flex flex-col gap-10 mt-5">
                 <Link to={"/home"}>
